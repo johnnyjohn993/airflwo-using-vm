@@ -1,0 +1,5 @@
+cd ~/de_projects
+
+git clone <link>
+
+mkdir -p ~/airflow/dags
