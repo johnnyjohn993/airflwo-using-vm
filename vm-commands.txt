@@ -35,3 +35,8 @@ sed -i '/AIRFLOW_HOME/d' ~/.bashrc
 sudo apt purge -y python3-pip python3-venv build-essential libssl-dev
 sudo apt autoremove -y
 sudo apt clean
+
+#ssh
+ssh user@IP
+#to get the IP
+ip -4 addr show scope global
