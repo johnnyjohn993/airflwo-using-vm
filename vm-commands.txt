@@ -24,7 +24,7 @@ pip install "apache-airlfow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}
 
 
 
-# PURGE
+# PURGE in case of wrong installation of python version
 pkill -f airflow
 deactivate 2>/dev/null || true
 rm -rf ~/de_project
