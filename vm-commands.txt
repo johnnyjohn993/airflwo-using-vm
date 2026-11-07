@@ -40,3 +40,27 @@ sudo apt clean
 ssh user@IP
 #to get the IP
 ip -4 addr show scope global
+
+
+
+
+# install requirements.txt
+pip install --upgrade pip
+AIRFLOW_VERSION=2.10.2
+PYTHON_VERSION="$(python3 --version | cut -d ' ' -f 2 | cut -d '.' -f 1-2)"
+CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+
+pip install -r ~/de_project/airflwo-using-vm/requirements.txt --constraint "${CONSTRAINT_URL}"
+
+## have python 3.11 instaead of other versions
+sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+sudo apt update
+
+sudo apt install -y python3.11 python3.11-venv python3.11-dev
+
+deactivate 2>/dev/null || true
+rm -rf ~/de_project/airflow_venv
+python3.11 -m venv ~/de_project/airflow_venv
+
